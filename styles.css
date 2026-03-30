@@ -29,6 +29,10 @@ a {
   text-decoration: none;
 }
 
+#int-con {
+border: goldenrod 2px solid;
+}
+
 .container {
   width: min(1100px, 92vw);
   margin-inline: auto;
