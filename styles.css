@@ -411,6 +411,26 @@ ul {
   margin-top: 4px;
 }
 
+.contact-form button:disabled {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.form-status {
+  min-height: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.form-status.is-success {
+  color: #1d7a46;
+}
+
+.form-status.is-error {
+  color: #b42318;
+}
+
 .site-footer {
   background: #102636;
   color: #cbd6e0;
