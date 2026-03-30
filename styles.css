@@ -33,6 +33,10 @@ a {
 border: goldenrod 2px solid;
 }
 
+#int-red {
+border: red 2px solid;
+}
+
 .container {
   width: min(1100px, 92vw);
   margin-inline: auto;
