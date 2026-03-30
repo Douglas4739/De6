@@ -103,9 +103,12 @@ a.btn {
 
 .btn-secondary,
 .btn-outline {
-  background: #fff;
+  border: 2px solid var(--primary);
+  box-shadow: inset 0 0 0 2px #075d7e;
+  /* background: #fff; */
   color: var(--primary);
-  border: 1px solid var(--primary);
+  border: 10px solid ;
+  border-color: #075d7e;
   padding: 11px 18px;
 }
 
