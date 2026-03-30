@@ -119,6 +119,15 @@ a.btn {
   font-size: 0.83rem;
 }
 
+.btn-spcl-cntr {
+  display: flex;
+  flex-direction: row;
+  margin: 35px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+
 .section {
   padding: 80px 0;
 }
@@ -227,6 +236,7 @@ a.btn {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 18px;
+  border-color: #0b88a6;
   padding: 24px;
   box-shadow: 0 8px 22px rgba(17, 35, 51, 0.08);
 }
