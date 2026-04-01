@@ -135,6 +135,54 @@ body {
   outline-offset: 2px;
 }
 
+.project-cta {
+  padding: 0 0 72px;
+  text-align: center;
+}
+
+.project-cta-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 28px 20px;
+}
+
+.project-cta-panel h2 {
+  margin: 0 0 8px;
+  color: #0d3046;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+.project-cta-panel p {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(to right, var(--primary), var(--primary-2));
+  box-shadow: 0 10px 20px rgba(7, 91, 121, 0.24);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(7, 91, 121, 0.28);
+}
+
+.contact-btn:focus-visible {
+  outline: 3px solid rgba(17, 135, 167, 0.35);
+  outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
   .project-gallery {
     padding: 12px;
