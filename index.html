@@ -767,6 +767,59 @@
           }
         });
       }
+
+      const revealTargets = [
+        [".section-header", ""],
+        [".hero-copy", "reveal-left"],
+        [".hero-image", "reveal-right reveal-delay-1"],
+        [".btn-spcl-cntr", "reveal-delay-1"],
+        [".steps li", ""],
+        [".contact-grid > div", "reveal-left"],
+        [".contact-form", "reveal-right"],
+      ];
+
+      revealTargets.forEach(([selector, extraClasses]) => {
+        document.querySelectorAll(selector).forEach((element) => {
+          element.classList.add("reveal");
+          if (extraClasses) {
+            extraClasses.split(" ").forEach((className) => {
+              if (className) {
+                element.classList.add(className);
+              }
+            });
+          }
+        });
+      });
+
+      [".card", ".service-card", ".testimonial"].forEach((selector) => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+          element.classList.add("reveal");
+          element.style.setProperty("--stagger", String(index % 4));
+        });
+      });
+
+      const revealItems = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.18,
+            rootMargin: "0px 0px -8% 0px",
+          },
+        );
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+      } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+      }
     </script>
   </body>
 </html>
