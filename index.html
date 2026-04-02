@@ -303,6 +303,64 @@
           </div>
         </div>
       </section>
+
+      <section id="reviews" class="section reviews">
+        <div class="container">
+          <div class="section-header">
+            <h2>Client Reviews</h2>
+            <p>
+              
+            </p>
+          </div>
+
+          <div class="reviews-panel" data-reviews-lock>
+            <div class="reviews-grid" aria-hidden="true">
+              <article class="review-card">
+                <h3>Batching Calculator/ IMS - Software Development</h3>
+                <p>
+                  "Tec³ built an inventory management system and material calculator for my manufacturing business. First year ROI was calculated at $26,000
+                  based on time saved and reduction in order errors."
+                </p>
+                <strong>-Yefat Arbeli</strong>
+                <p>Owner, Concretti Designs</p>
+              </article>
+              <article class="review-card">
+                <h3>Custom Order Form - Software Development</h3>
+                <p>
+                  "Tec³ assisted me greatly in creating a custom order form for our business. They were quick, professional, and reasonably priced. I am very pleased with the overall work!"
+                </p>
+                <strong>-Ty Arbeli</strong>
+                <p>VP of Sales, Fresh Fresheners</p>
+              </article>
+              <article class="review-card">
+                <h3>Website - Software Development</h3>
+                <p>
+            Tec³ helped me get my restaurant into the 21st century! They created our very first website in just 2 weeks. They were communicative, efficient, and the final product was exactly what I wanted. I highly recommend them for any software development needs.
+                </p>
+                <strong>-Carla Moore</strong>
+                <p>Owner, Crazy Greeks</p>
+              </article>
+            </div>
+
+            <div class="reviews-lock-overlay" data-reviews-overlay>
+              <div class="reviews-lock-content">
+                <h3>Protected Review Access</h3>
+                <p>
+                  This section is passcode-protected. Use the access code to
+                  uncover the full reviews.
+                </p>
+                <div class="reviews-actions">
+                  <a class="btn btn-primary" href="#contact">Go to Contact Form</a>
+                  <button class="btn btn-secondary reviews-unlock-btn" type="button" data-unlock-reviews>
+                    Enter Pass Code
+                  </button>
+                </div>
+                <p class="reviews-feedback" data-unlock-feedback aria-live="polite"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="btn-spcl-cntr">
         <a href="#contact" class="btn btn-primary">Contact me</a>
       </div>
@@ -802,6 +860,35 @@
       });
 
       const revealItems = document.querySelectorAll(".reveal");
+
+      const reviewsLock = document.querySelector("[data-reviews-lock]");
+      const unlockButton = document.querySelector("[data-unlock-reviews]");
+      const unlockFeedback = document.querySelector("[data-unlock-feedback]");
+      const reviewsOverlay = document.querySelector("[data-reviews-overlay]");
+
+      if (reviewsLock && unlockButton && unlockFeedback && reviewsOverlay) {
+        const PASS_CODE = "4739";
+
+        unlockButton.addEventListener("click", () => {
+          const userCode = window.prompt(
+            "Enter pass code to uncover reviews:",
+          );
+
+          if (userCode === null) {
+            unlockFeedback.textContent = "Pass code entry canceled.";
+            return;
+          }
+
+          if (userCode.trim() === PASS_CODE) {
+            reviewsLock.classList.add("is-unlocked");
+            reviewsOverlay.setAttribute("aria-hidden", "true");
+            unlockFeedback.textContent = "Access granted. Reviews uncovered.";
+            return;
+          }
+
+          unlockFeedback.textContent = "Incorrect pass code. Please try again.";
+        });
+      }
 
       if ("IntersectionObserver" in window) {
         const revealObserver = new IntersectionObserver(
