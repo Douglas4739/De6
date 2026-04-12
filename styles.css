@@ -386,6 +386,13 @@ ul {
   color: var(--muted);
 }
 
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
 .reviews {
   background: linear-gradient(160deg, #f6fbff 0%, #eef7fb 46%, #f8fafc 100%);
 }
